@@ -32,7 +32,7 @@ your-project/
 ## 🧑‍💻 Getting Started
 
 ```bash
-git clone https://github.com/yourusername/your-repo-name.git
+git clone https://github.com/mahes-reddy332/Smart_Sahaayak
 cd your-repo-name
 npm install
 npm start
