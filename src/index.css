@@ -1,0 +1,571 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Poppins font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* Set Poppins as default font */
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Custom animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounce-gentle {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.6);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-bounce-gentle {
+  animation: bounce-gentle 2s infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s infinite;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar with Indian colors - Compact and responsive */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+@media (min-width: 640px) {
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+}
+
+::-webkit-scrollbar-track {
+  background: #f8fafc;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #ff9933, #138808);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #e6851a, #0f6b06);
+}
+
+/* Enhanced focus states with Indian theme */
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  ring: 2px;
+  ring-color: #ff9933;
+  ring-opacity: 50%;
+}
+
+/* Glassmorphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Indian gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #ff9933 0%, #138808 50%, #000080 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Indian flag inspired gradients */
+.indian-gradient {
+  background: linear-gradient(135deg, #ff9933 0%, #ffffff 50%, #138808 100%);
+}
+
+.saffron-gradient {
+  background: linear-gradient(135deg, #ff9933 0%, #ffb366 100%);
+}
+
+.green-gradient {
+  background: linear-gradient(135deg, #138808 0%, #4caf50 100%);
+}
+
+/* Neumorphic design elements */
+.neumorphic {
+  background: #f0f4f8;
+  border-radius: 20px;
+  box-shadow: 
+    8px 8px 16px rgba(163, 177, 198, 0.6),
+    -8px -8px 16px rgba(255, 255, 255, 0.8);
+}
+
+.neumorphic-inset {
+  background: #f0f4f8;
+  border-radius: 12px;
+  box-shadow: 
+    inset 4px 4px 8px rgba(163, 177, 198, 0.6),
+    inset -4px -4px 8px rgba(255, 255, 255, 0.8);
+}
+
+/* Touch-friendly design - Responsive */
+@media (max-width: 768px) {
+  button, input, select, textarea {
+    min-height: 44px;
+    font-size: 16px;
+    padding: 10px;
+  }
+  
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Extra small screens - More compact */
+@media (max-width: 480px) {
+  button, input, select, textarea {
+    min-height: 40px;
+    font-size: 14px;
+    padding: 8px;
+  }
+  
+  .touch-target {
+    min-height: 40px;
+    min-width: 40px;
+  }
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Floating action button */
+.fab {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff9933, #138808);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.fab:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* Language toggle styles - Black text, responsive */
+.lang-toggle {
+  color: black;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  min-width: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+}
+
+@media (min-width: 640px) {
+  .lang-toggle {
+    border-radius: 12px;
+    padding: 8px 16px;
+    min-width: 100px;
+  }
+}
+
+.lang-toggle:hover {
+  background: #f3f4f6;
+  border-color: #9ca3af;
+}
+
+/* Indian business theme colors */
+.bg-saffron { background-color: #ff9933; }
+.bg-white-india { background-color: #ffffff; }
+.bg-green-india { background-color: #138808; }
+.text-saffron { color: #ff9933; }
+.text-green-india { color: #138808; }
+.border-saffron { border-color: #ff9933; }
+.border-green-india { border-color: #138808; }
+
+/* Responsive design improvements - Mobile-first approach */
+@media (max-width: 640px) {
+  .container-mobile {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  
+  .text-responsive {
+    font-size: clamp(0.875rem, 3.5vw, 1.25rem);
+  }
+  
+  .heading-responsive {
+    font-size: clamp(1.25rem, 5vw, 2.5rem);
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .container-mobile {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  
+  .text-responsive {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+  }
+  
+  .heading-responsive {
+    font-size: clamp(1.5rem, 6vw, 3rem);
+  }
+}
+
+/* Enhanced Sidebar Navigation Styles */
+.sidebar-scrollable {
+  scrollbar-width: thin;
+  scrollbar-color: #ff9933 #f1f5f9;
+}
+
+.sidebar-scrollable::-webkit-scrollbar {
+  width: 3px;
+}
+
+@media (min-width: 640px) {
+  .sidebar-scrollable::-webkit-scrollbar {
+    width: 4px;
+  }
+}
+
+.sidebar-scrollable::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 2px;
+}
+
+.sidebar-scrollable::-webkit-scrollbar-thumb {
+  background: #ff9933;
+  border-radius: 2px;
+}
+
+.sidebar-scrollable::-webkit-scrollbar-thumb:hover {
+  background: #e6851a;
+}
+
+/* Enhanced Navigation Item Styles */
+.nav-item {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Active navigation item with enhanced styling */
+.nav-item.active {
+  background: linear-gradient(135deg, #f0f4ff 0%, #e0e7ff 100%);
+  box-shadow: 
+    0 4px 12px rgba(59, 130, 246, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  border-left: 4px solid #3b82f6;
+  transform: translateX(2px);
+}
+
+/* Subtle animation for active state */
+.nav-item.active::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, 
+    rgba(59, 130, 246, 0.1) 0%, 
+    rgba(59, 130, 246, 0.05) 50%, 
+    transparent 100%);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Hover effects for non-active items */
+.nav-item:not(.active):hover {
+  background: linear-gradient(135deg, #fef7ed 0%, #f0fdf4 100%);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transform: translateX(1px);
+}
+
+/* Text truncation utilities */
+.truncate-1-line {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.truncate-2-lines {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-height: 1.4;
+  max-height: 2.8em;
+}
+
+/* Loading animations */
+.loading-shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Success animations */
+.success-bounce {
+  animation: successBounce 0.6s ease-out;
+}
+
+@keyframes successBounce {
+  0% { transform: scale(0.3); opacity: 0; }
+  50% { transform: scale(1.05); }
+  70% { transform: scale(0.9); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Smooth transitions for all interactive elements */
+.smooth-transition {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Focus visible for accessibility */
+.focus-visible:focus {
+  outline: 2px solid #ff9933;
+  outline-offset: 2px;
+}
+
+/* Sidebar toggle animations */
+.sidebar-slide-enter {
+  transform: translateX(-100%);
+}
+
+.sidebar-slide-enter-active {
+  transform: translateX(0);
+  transition: transform 300ms ease-in-out;
+}
+
+.sidebar-slide-exit {
+  transform: translateX(0);
+}
+
+.sidebar-slide-exit-active {
+  transform: translateX(-100%);
+  transition: transform 300ms ease-in-out;
+}
+
+/* Main content expansion when sidebar is hidden */
+.main-content-expanded {
+  margin-left: 0 !important;
+  width: 100% !important;
+}
+
+/* Desktop sidebar toggle button styles - Black text */
+.sidebar-toggle-btn {
+  background: white;
+  border: 2px solid #d1d5db;
+  border-radius: 12px;
+  padding: 10px;
+  color: black;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.sidebar-toggle-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  background: #f3f4f6;
+  border-color: #9ca3af;
+}
+
+.sidebar-toggle-btn:active {
+  transform: scale(0.95);
+}
+
+/* Responsive sidebar behavior */
+@media (min-width: 1024px) {
+  .sidebar-desktop-toggle {
+    position: relative;
+    transform: none;
+  }
+}
+
+/* Ensure proper spacing when sidebar is hidden */
+.content-with-sidebar {
+  transition: margin-left 0.3s ease;
+}
+
+.content-without-sidebar {
+  transition: margin-left 0.3s ease;
+}
+
+/* Mobile-first responsive design */
+@media (max-width: 1023px) {
+  .content-with-sidebar,
+  .content-without-sidebar {
+    margin-left: 0;
+  }
+}
+
+/* Responsive grid improvements */
+@media (max-width: 640px) {
+  .grid-responsive {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .grid-responsive {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  .grid-responsive {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+}
+
+/* Responsive typography */
+.responsive-text-xs { font-size: clamp(0.75rem, 2vw, 0.875rem); }
+.responsive-text-sm { font-size: clamp(0.875rem, 2.5vw, 1rem); }
+.responsive-text-base { font-size: clamp(1rem, 3vw, 1.125rem); }
+.responsive-text-lg { font-size: clamp(1.125rem, 3.5vw, 1.25rem); }
+.responsive-text-xl { font-size: clamp(1.25rem, 4vw, 1.5rem); }
+.responsive-text-2xl { font-size: clamp(1.5rem, 5vw, 2rem); }
+.responsive-text-3xl { font-size: clamp(1.875rem, 6vw, 2.5rem); }
+.responsive-text-4xl { font-size: clamp(2.25rem, 7vw, 3rem); }
+
+/* Responsive spacing utilities */
+.responsive-p-2 { padding: clamp(0.5rem, 2vw, 0.75rem); }
+.responsive-p-4 { padding: clamp(0.75rem, 3vw, 1rem); }
+.responsive-p-6 { padding: clamp(1rem, 4vw, 1.5rem); }
+.responsive-p-8 { padding: clamp(1.5rem, 5vw, 2rem); }
+
+.responsive-m-2 { margin: clamp(0.5rem, 2vw, 0.75rem); }
+.responsive-m-4 { margin: clamp(0.75rem, 3vw, 1rem); }
+.responsive-m-6 { margin: clamp(1rem, 4vw, 1.5rem); }
+.responsive-m-8 { margin: clamp(1.5rem, 5vw, 2rem); }
+
+/* Responsive gap utilities */
+.responsive-gap-2 { gap: clamp(0.5rem, 2vw, 0.75rem); }
+.responsive-gap-4 { gap: clamp(0.75rem, 3vw, 1rem); }
+.responsive-gap-6 { gap: clamp(1rem, 4vw, 1.5rem); }
+.responsive-gap-8 { gap: clamp(1.5rem, 5vw, 2rem); }
+
+/* Improved button responsiveness */
+@media (max-width: 640px) {
+  .btn-responsive {
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    border-radius: 0.75rem;
+  }
+}
+
+@media (min-width: 641px) {
+  .btn-responsive {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 1rem;
+  }
+}
+
+/* Responsive card spacing */
+@media (max-width: 640px) {
+  .card-responsive {
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (min-width: 641px) {
+  .card-responsive {
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  .card-responsive {
+    padding: 2rem;
+    border-radius: 2rem;
+    margin-bottom: 2rem;
+  }
+}
