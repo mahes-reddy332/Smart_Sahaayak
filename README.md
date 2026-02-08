@@ -12,7 +12,7 @@ Watch the complete walkthrough of the application on YouTube:
 
 [![SmartSahaayak Demo](https://img.youtube.com/vi/S9rzLP_lJ68/0.jpg)](https://www.youtube.com/watch?v=S9rzLP_lJ68)
 
----
+--- 
 
 ## 📌 Problem Statement
 
